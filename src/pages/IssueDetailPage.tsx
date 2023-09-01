@@ -55,7 +55,7 @@ const IssueDetailPage = () => {
           </InfoWrapper>
         </HeaderWrapper>
         <BodyWrapper>
-          <MarkDown remarkPlugins={[remarkGfm]}>{issue.body}</MarkDown>
+          <MarkDown remarkPlugins={[remarkGfm]}>{issue.body || ""}</MarkDown>
         </BodyWrapper>
       </Content>
     </Wrapper>
