@@ -33,3 +33,12 @@ const getPagination = (data: string | undefined) => {
 
   return undefined;
 };
+
+export const getIssueDetail = async (id: string) => {
+  const { data } = await octokitService.request("GET /repos/{owner}/{repo}/issues/{id}", {
+    owner: "facebook",
+    repo: "react",
+    id,
+  });
+  return new Issue(data);
+};
